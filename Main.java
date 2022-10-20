@@ -6,46 +6,44 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    static List<Veiculo> ListaVeiculos = new ArrayList<Veiculo>();
+    static String RetonaTipoVeiculo(int IdentificadorVeiculo){
+        String TipoVeiculo = switch (IdentificadorVeiculo) {
+            case 1 -> "Moto";
+            case 2 -> "Carro";
+            case 3 -> "Caminhao";
+            default -> throw new IllegalStateException("Unexpected value: " + IdentificadorVeiculo);
+        };
+        return TipoVeiculo;
+    }
 
-    /*Teste para ser usado no cadastro*/
-    public enum TiposVeiculos {
-        CAMINHAO(3,"CAMINHAO"),
-        CARRO(2,"CARRO"),
-        MOTO(1,"MOTO");
-
-        private final int valor;
-        private final String descricao;
-
-        TiposVeiculos(int valor, String descricao) {
-            this.valor = valor;
-            this.descricao = descricao;
+    static void ListaVeiculos(List<Veiculo> ListaVeiculos){
+        int Contador = 0;
+        for(Veiculo Veiculo : ListaVeiculos)
+        {
+            System.out.printf("%d - %s%n", Contador, Veiculo.RetornaDadosVeiculo());
+            Contador++;
         }
-
-        public int getValor() {
-            return this.valor;
-        }
-        public String getDescricao() {
-            return this.descricao;
-        }
-
-
     }
 
     public static void main(String[] args){
         //Declaração de variaveis
-        int MenuEscolha;
+        int MenuEscolha, TipoVeiculo;
         Veiculo Veiculo;
-        List<Veiculo> ListaVeiculos = new ArrayList<Veiculo>();
+        /*List<Veiculo> ListaVeiculos = new ArrayList<Veiculo>();*/
         Scanner sc = new Scanner(System.in);
 
         //Inicialização de variaveis
         MenuEscolha = 1;
+        TipoVeiculo = 0;
 
         //Mensagem com as opções do menu
-        System.out.println("Opções disponiveis." +
-                "\n 1 - Ver lista de veiculos cadastrados" +
-                "\n 2 - Cadastrar novo veiculo " +
-                "\n 0 - Sair");
+        System.out.println("""
+                Opções disponiveis.
+                 1 - Ver lista de veiculos cadastrados
+                 2 - Cadastrar novo veiculo\s
+                 3 - Editar Registro
+                 0 - Sair""");
 
         while (MenuEscolha > 0){
 
@@ -56,25 +54,46 @@ public class Main {
 
                 case 1: /*Lista de veiculos cadastrados*/
                     /*System.out.println("Opção 1");*/
+
                     if (ListaVeiculos.isEmpty()){
                         System.out.println("Ainda não foi cadastrado nenhum item para venda!");
-                    }else{
-
-                        /*Função lambda para percorrer a coleção*/
-                        ListaVeiculos.forEach(Veiculo2 ->{
-                            /*Criar função listarCaracteristica*/
-                            System.out.println(Veiculo2.RetornaDadosVeiculo());
-                        });
+                    }else {
+                        ListaVeiculos(ListaVeiculos);
                     }
                     break;
 
                 case 2: /*Cadastro de novos veiculos*/
-                    /*System.out.println("Opção 2");*/
 
                     Veiculo = new Veiculo();
 
                     System.out.println("Digite a marca do veiculo: ");
                     Veiculo.setMarca(sc.next());
+
+                    System.out.println("Digite o Modelo do veiculo: ");
+                    Veiculo.setModelo(sc.next());
+
+                    System.out.println("Digite o estado do veiculo: ");
+                    Veiculo.setEstado(sc.next());
+
+                    System.out.println("Digite a cor do veiculo: ");
+                    Veiculo.setCor(sc.next());
+
+                    System.out.println("Digite o numero referente ao tipo do veiculo (1)-MOTO, (2)-CARRO e (3)-CAMINHÃO: "); /*Colocar enum*/
+                    while((TipoVeiculo != 1) && (TipoVeiculo != 2) && (TipoVeiculo != 3) ) {
+                        TipoVeiculo = sc.nextInt();
+
+                    }
+
+                    Veiculo.setTipoVeiculo(RetonaTipoVeiculo(TipoVeiculo));
+
+                    System.out.println("Digite o valor do veiculo: ");
+                    Veiculo.setValor(sc.nextDouble());
+
+                    System.out.println("Digite a kilometragem do veiculo: ");
+                    Veiculo.setKilometragem(sc.nextDouble());
+
+                    System.out.println("Digite a quantidade de veiculos disponiveis: ");
+                    Veiculo.setQuantidadeDisponivel(sc.nextInt());
 
                     ListaVeiculos.add(Veiculo);
                     break;
@@ -88,3 +107,4 @@ public class Main {
         }
     }
 }
+

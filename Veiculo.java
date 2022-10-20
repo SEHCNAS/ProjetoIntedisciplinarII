@@ -3,7 +3,7 @@ package ProjetoInterdisciplinar_II;
 public class Veiculo {
 
     //Declaração das variaveis
-    private int QuantidadeDisponivel, Identificador;
+    private int QuantidadeDisponivel;
     private String Modelo, Marca, Estado, TipoVeiculo, Cor;
     private Double Kilometragem, Valor;
 
@@ -15,14 +15,6 @@ public class Veiculo {
 
     public void setQuantidadeDisponivel(int quantidadeDisponivel) {
         QuantidadeDisponivel = quantidadeDisponivel;
-    }
-
-    public int getIdentificador() {
-        return Identificador;
-    }
-
-    public void setIdentificador(int identificador) {
-        Identificador = identificador;
     }
 
     public String getModelo() {
