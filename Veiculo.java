@@ -76,7 +76,7 @@ public class Veiculo {
     //Funções
 
     public String RetornaDadosVeiculo(){
-        return "Marca: " + this.Marca + ", Modelo: " + this.Modelo + ", Tipo: " + this.TipoVeiculo;
+        return "Marca: " + this.Marca + ", \t\tModelo: " + this.Modelo + ", \t\tTipo: " + this.TipoVeiculo;
     }
 
   /*  void RealizarVenda(){

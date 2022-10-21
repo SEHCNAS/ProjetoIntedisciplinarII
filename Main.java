@@ -29,23 +29,23 @@ public class Main {
 
     static void CadastraAtualizaVeiculo(String mode, Veiculo Veiculo, int ItemAtualizar){
         int TipoVeiculo = 0;
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 1))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 1 || ItemAtualizar == 0))) {
             System.out.println("Digite a marca do veiculo: ");
             Veiculo.setMarca(sc.next());
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 2))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 2 || ItemAtualizar == 0))) {
             System.out.println("Digite o Modelo do veiculo: ");
             Veiculo.setModelo(sc.next());
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 3))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 3 || ItemAtualizar == 0))) {
             System.out.println("Digite o estado do veiculo: ");
             Veiculo.setEstado(sc.next());
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 4))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 4 || ItemAtualizar == 0))) {
             System.out.println("Digite a cor do veiculo: ");
             Veiculo.setCor(sc.next());
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 5))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 5 || ItemAtualizar == 0))) {
             System.out.println("Digite o numero referente ao tipo do veiculo (1)-MOTO, (2)-CARRO e (3)-CAMINHÃO: ");
             while ((TipoVeiculo != 1) && (TipoVeiculo != 2) && (TipoVeiculo != 3)) {
                 TipoVeiculo = sc.nextInt();
@@ -54,15 +54,15 @@ public class Main {
 
             Veiculo.setTipoVeiculo(RetonaTipoVeiculo(TipoVeiculo));
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 6))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 6 || ItemAtualizar == 0))) {
             System.out.println("Digite o valor do veiculo: ");
             Veiculo.setValor(sc.nextDouble());
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 7))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 7 || ItemAtualizar == 0))) {
             System.out.println("Digite a kilometragem do veiculo: ");
             Veiculo.setKilometragem(sc.nextDouble());
         }
-        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 8))) {
+        if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 8 || ItemAtualizar == 0))) {
             System.out.println("Digite a quantidade de veiculos disponiveis: ");
             Veiculo.setQuantidadeDisponivel(sc.nextInt());
         }
