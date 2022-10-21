@@ -9,7 +9,6 @@ public class Veiculo {
 
     //Getter e Setter
 
-    
     public int getQuantidadeDisponivel() {
         return QuantidadeDisponivel;
     }
