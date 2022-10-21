@@ -19,14 +19,6 @@ public class Main {
         };
     }
 
-    static void ListaVeiculos(List<Veiculo> ListaVeiculos) {
-        int Contador = 0;
-        for (Veiculo Veiculo : ListaVeiculos) {
-            System.out.printf("%d - %s%n", Contador, Veiculo.RetornaDadosVeiculo());
-            Contador++;
-        }
-    }
-
     static void CadastraAtualizaVeiculo(String mode, Veiculo Veiculo, int ItemAtualizar){
         int TipoVeiculo = 0;
         if((Objects.equals(mode, "INS")) || ((Objects.equals(mode, "UPD")) && (ItemAtualizar == 1 || ItemAtualizar == 0))) {
@@ -98,7 +90,7 @@ public class Main {
                     if (ListaVeiculos.isEmpty()) {
                         System.out.println("Ainda não foi cadastrado nenhum item para venda!");
                     } else {
-                        ListaVeiculos(ListaVeiculos);
+                        VeiculoLista.Lista(ListaVeiculos);
                     }
                     break;
 
@@ -113,7 +105,7 @@ public class Main {
                     if (ListaVeiculos.isEmpty()) {
                         System.out.println("Ainda não foi cadastrado nenhum item para venda!");
                     } else {
-                        ListaVeiculos(ListaVeiculos);
+                        VeiculoLista.Lista(ListaVeiculos);
                         System.out.println("Digite o id do item que deseja editar: ");
                         CadastraAtualizaVeiculo("UPD", ListaVeiculos.get(sc.nextInt()), 1);
                     }
@@ -128,5 +120,6 @@ public class Main {
             }
         }
     }
+
 }
 
