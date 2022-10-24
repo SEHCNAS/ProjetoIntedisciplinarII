@@ -71,11 +71,7 @@ public class Veiculo_CadastroAtualizacao {
         VeiculoLista.Lista(Main.ListaVeiculos);
         System.out.println("Digite o id do item que deseja Excluir: ");
         int itemExcluir = sc.nextInt();
-        if (itemExcluir < 0) {
-            System.out.println("ID inválido");
-        } else if (itemExcluir > Main.ListaVeiculos.size()) {
-            System.out.println("ID inválido");
-        } else if ((Main.ListaVeiculos.size() == 1) && (itemExcluir == 1)) {
+        if ((itemExcluir < 0) || (itemExcluir >= Main.ListaVeiculos.size())) {
             System.out.println("ID inválido");
         } else {
             Main.ListaVeiculos.remove(itemExcluir);
