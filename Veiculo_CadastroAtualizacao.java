@@ -2,7 +2,6 @@ package ProjetoInterdisciplinar_II;
 
 import java.util.Objects;
 import java.util.Scanner;
-import java.util.List;
 
 public class Veiculo_CadastroAtualizacao {
     static Scanner sc = new Scanner(System.in);
@@ -68,7 +67,7 @@ public class Veiculo_CadastroAtualizacao {
     }
 
     static void ExcluirVeiculo() {
-        VeiculoLista.Lista(Main.ListaVeiculos);
+        VeiculoLista.listaFiltro(Main.ListaVeiculos);
         System.out.println("Digite o id do item que deseja Excluir: ");
         int itemExcluir = sc.nextInt();
         if ((itemExcluir < 0) || (itemExcluir >= Main.ListaVeiculos.size())) {
