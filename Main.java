@@ -78,7 +78,7 @@ public class Main {
                     if (ListaVeiculos.isEmpty()) {
                         System.out.println("Ainda não foi cadastrado nenhum item para venda!");
                     } else {
-                        VeiculoLista.Lista(ListaVeiculos);
+                        VeiculoLista.listaFiltro(ListaVeiculos);
                         System.out.println("Digite o id do item que deseja editar: ");
                         indexDoVeliculo = sc.nextInt();
 
