@@ -14,13 +14,27 @@ public class VeiculoLista {
         }
     }
 
+    // Função de listar o tipo do Veiculo informado
+    static void listarVeiculo(List<Veiculo> ListaVeiculos, String tipoVeiculo) {
+        // Inicialização de variaveis
+        int Contador = 0;
+        for (Veiculo veiculo : ListaVeiculos) {
+            if (veiculo.getTipoVeiculo().equals(tipoVeiculo)) {
+                System.out.printf("%d - %s%n", Contador, veiculo.RetornaDadosVeiculo());
+                Contador++;
+            }
+        }
+        if (Contador == 0) {
+            System.out.printf("Nenhum.\n");
+        }
+    }
+
     static void listaFiltro(List<Veiculo> ListaVeiculos) {
         // Declaração de variaveis
         Scanner sc = new Scanner(System.in);
 
         // Inicialização de variaveis
         int MenuEscolha = 1;
-        int Contador = 0;
         System.out.println("""
                 Ver lista de veiculos cadastrados
                 Opções disponiveis.
@@ -38,41 +52,17 @@ public class VeiculoLista {
                     Lista(ListaVeiculos);
 
                 case 2:// Moto
-                    for (Veiculo veiculo : ListaVeiculos) {
-                        if (veiculo.getTipoVeiculo().equals("Moto")) {
-                            System.out.printf("%d - %s%n", Contador, veiculo.RetornaDadosVeiculo());
-                            Contador++;
-                        }
-                    }
-                    if (Contador == 0) {
-                        System.out.printf("Nenhum.\n");
-                    }
+                    listarVeiculo(ListaVeiculos, "Moto");
                     MenuEscolha = 0;
                     break;
 
                 case 3:// Carro
-                    for (Veiculo veiculo : ListaVeiculos) {
-                        if (veiculo.getTipoVeiculo().equals("Carro")) {
-                            System.out.printf("%d - %s%n", Contador, veiculo.RetornaDadosVeiculo());
-                            Contador++;
-                        }
-                    }
-                    if (Contador == 0) {
-                        System.out.printf("Nenhum.\n");
-                    }
+                    listarVeiculo(ListaVeiculos, "Carro");
                     MenuEscolha = 0;
                     break;
 
                 case 4:// Caminão
-                    for (Veiculo veiculo : ListaVeiculos) {
-                        if (veiculo.getTipoVeiculo().equals("Caminhão")) {
-                            System.out.printf("%d - %s%n", Contador, veiculo.RetornaDadosVeiculo());
-                            Contador++;
-                        }
-                    }
-                    if (Contador == 0) {
-                        System.out.printf("Nenhum.\n");
-                    }
+                    listarVeiculo(ListaVeiculos, "Caminhão");
                     MenuEscolha = 0;
                     break;
 
